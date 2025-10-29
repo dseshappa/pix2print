@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Your Online Store</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🛍️ ShopHub</div>
+            <nav>
+                <a href="#" onclick="showCategories(); return false;">Home</a>
+                <a href="#" onclick="showAboutPage(); return false;">About</a>
+                <a href="#" onclick="showContactPage(); return false;">Contact</a>
+            </nav>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">🛍️ ShopHub</div>
+            <button class="close-menu" onclick="closeMobileMenu()">×</button>
+        </div>
+        <div class="mobile-menu-items">
+            <a href="#" onclick="showCategories(); closeMobileMenu(); return false;">Home</a>
+            <a href="#" onclick="showAboutPage(); closeMobileMenu(); return false;">About</a>
+            <a href="#" onclick="showContactPage(); closeMobileMenu(); return false;">Contact</a>
+        </div>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="breadcrumb" id="breadcrumb">
+            <span onclick="showCategories()">Home</span>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <div id="categories" class="grid"></div>
+        <div id="subcategories" class="grid" style="display: none;"></div>
+        <div id="products" class="grid" style="display: none;"></div>
+        <div id="productDetail" class="product-detail"></div>
+        
+        <!-- About Page -->
+        <div id="aboutPage" class="content-page" style="display: none;">
+            <h1>About ShopHub</h1>
+            <div class="content-section">
+                <h2>Our Story</h2>
+                <p>Founded in 2020, ShopHub has grown from a small startup to one of the leading online retailers. We are passionate about bringing quality products to our customers at competitive prices.</p>
+            </div>
+            <div class="content-section">
+                <h2>Our Mission</h2>
+                <p>To provide an exceptional shopping experience with a wide selection of products, excellent customer service, and fast, reliable delivery.</p>
+            </div>
+            <div class="content-section">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li>✓ Wide range of quality products</li>
+                    <li>✓ Competitive prices</li>
+                    <li>✓ Fast and reliable shipping</li>
+                    <li>✓ 30-day return policy</li>
+                    <li>✓ 24/7 customer support</li>
+                    <li>✓ Secure payment options</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contactPage" class="content-page" style="display: none;">
+            <h1>Contact Us</h1>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have a question or need assistance? We're here to help!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>📧 Email:</strong>
+                            <p>orders@shophub.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📱 WhatsApp:</strong>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📍 Address:</strong>
+                            <p>123 Shop Street<br>City, State 12345<br>United States</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>🕐 Business Hours:</strong>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form onsubmit="submitContactForm(event)">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-email">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>ShopHub is your one-stop destination for quality products at great prices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: orders@shophub.com</p>
+                <p>WhatsApp: +1 (555) 123-4567</p>
+                <p>Address: 123 Shop St, City, State</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ShopHub. All rights reserved.</p>
+        </div>
+    </footer>
+<script src="./js/script.js"></script>  
+</body>
+</html>
+        
