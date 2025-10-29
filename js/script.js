@@ -1,9 +1,9 @@
 
 // Configuration - CHANGE THESE TO YOUR DETAILS
 const SHOP_CONFIG = {
-    whatsappNumber: '15551234567', // Format: country code + number (no + or spaces)
-    email: 'orders@shophub.com',
-    shopName: 'ShopHub'
+    whatsappNumber: '+91 8903166611', // Format: country code + number (no + or spaces)
+    email: 'achyutgrapix@gamil.com',
+    shopName: 'Achyut Grapix'
 };
 
 let currentCategory = null;
@@ -529,4 +529,5 @@ fetch("./data/product.json")
       console.error("❌ Error loading product.json:", error);
       alert("⚠️ Failed to load product data. Check console for details.");
   });
+
 
